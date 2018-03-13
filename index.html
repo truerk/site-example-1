@@ -20,16 +20,27 @@
     
     <div class="header">
         <div class="header-container">
-            <div class="logo">
-                
+            <div class="logo">                
             </div>
             <div class="menu">
                 <a href="index.html">HOME</a>
                 <a href="#portfolio">PORTFOLIO</a>
                 <a href="#about">ABOUT</a>
                 <a href="#blog">BLOG</a>
-                <a href="#contact">CONTACT</a>
-            </div>
+                <a href="#contact">CONTACT</a>                
+            </div>              
+            <div id="open-menu" class="menu-open">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>           
+        </div>
+        <div class="menu-mobile">
+            <a href="index.html">HOME</a>
+            <a href="#portfolio">PORTFOLIO</a>
+            <a href="#about">ABOUT</a>
+            <a href="#blog">BLOG</a>
+            <a href="#contact">CONTACT</a>                
         </div>
     </div>
 
@@ -132,15 +143,12 @@
 
     <div class="footer">
         <div class="footer-container">
-
             <div class="footer-header">
                 Get in Touch
             </div>            
             <div class="footer-label">
                 Vestibulum id ligula porta felis euismod semper,malesuada euismod.
             </div>
-
-
             <div class="footer-info">
                 <div class="info-street">
                     <div class="info-logo"><img src="img/footer/info/street.png" alt="street"></div>
@@ -151,23 +159,41 @@
                     <div class="phone-info">0247 541 65 87</div>                    
                 </div>
             </div>
-
             <div class="footer-social">
-                <div class="social-icon rss"><img src="img/footer/social/rss.png" alt="rss"></div>
-                <div class="social-icon facebook"><img src="img/footer/social/facebook.png" alt="facebook"></div>
-                <div class="social-icon twitter"><img src="img/footer/social/twitter.png" alt="twitter"></div>
-                <div class="social-icon dribbble"><img src="img/footer/social/dribbble.png" alt="dribbble"></div>
-                <div class="social-icon pinterest"><img src="img/footer/social/pinterest.png" alt="pinterest"></div>
-            </div>
-
-            
+                <div class="social-icon rss"><a href="#rss"><img src="img/footer/social/rss.png" alt="rss"></a></div>
+                <div class="social-icon facebook"><a href="#facebook"><img src="img/footer/social/facebook.png" alt="facebook"></a></div>
+                <div class="social-icon twitter"><a href="#twitter"><img src="img/footer/social/twitter.png" alt="twitter"></a></div>
+                <div class="social-icon dribbble"><a href="#dribbble"><img src="img/footer/social/dribbble.png" alt="dribbble"></a></div>
+                <div class="social-icon pinterest"><a href="#pinterest"><img src="img/footer/social/pinterest.png" alt="pinterest"></a></div>
+            </div>            
         </div>
-        <div class="copyright-container">@ 2013 Webpaint. All Rights Reserved.</div>
+        <div class="copyright-container">@ 2018 Truerk. All Rights Reserved.</div>
     </div>
 
 
-    
+    <div class="menu-fon"></div>
 
-<script src="jquery.js"></script>
+<script src="js/jquery.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+
+        /* --- открытие меню --- */
+        $('#open-menu').click(function(){
+            $('.menu-fon').fadeIn(10);
+            $('.menu-mobile').css('animation','open-menu 1s ease-in-out');            
+            setTimeout(function(){
+                $('.menu-mobile').fadeIn();
+            }, 100);            
+        });
+        /* --- закрытие меню --- */
+        $('.menu-fon').click(function(){
+            $('.menu-mobile').css('animation','close-menu 1s ease-in-out');
+            setTimeout(function(){
+                $('.menu-mobile').css('display', 'none');
+            }, 500);            
+            $('.menu-fon').css('display', 'none');
+        });
+    });
+</script>
 </body>
 </html>  
